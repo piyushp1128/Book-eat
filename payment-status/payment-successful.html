@@ -1,0 +1,34 @@
+ 
+<div class="container">
+    <link rel="stylesheet" href="payment-success.css">
+        <a href="./../vit-menu.html" class="back-button" >Back To Home </a>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="message-box _success">
+                     <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2> Your payment was successful </h2>
+                   <p> Thank you for your payment. we will <br>
+be in contact with more details shortly </p>  
+                    <p id="token-id" ></p>
+            </div> 
+        </div> 
+    </div> 
+    <hr>
+  
+  <script>
+
+    const token=Math.floor(Math.random()*100)+1;
+    document.getElementById('token-id').innerText=`Your token number is ${token} `;
+  </script>
+  <!-- <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="message-box _success _failed">
+                     <i class="fa fa-times-circle" aria-hidden="true"></i>
+                    <h2> Your payment failed </h2>
+             <p>  Try again later </p> 
+         
+            </div> 
+        </div> 
+    </div>  -->
+  
+</div> 
