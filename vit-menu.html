@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Eat - Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vit-menu.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header-section">
+            <div class="top-bar">
+                <a href="#" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h1 class="page-title">Menu</h1>
+                <div class="profile-icon">
+                    <img src="images/profile.png" alt="Profile">
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for food...">
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+            <div class="category-item active" data-category="starters">Starters</div>
+            <div class="category-item" data-category="mains">Mains</div>
+            <div class="category-item" data-category="desserts">Desserts</div>
+        </div>
+
+        <!-- Menu Content -->
+        <div class="menu-content">
+            <!-- Starters Menu (active by default) -->
+            <div class="menu-category active" id="starters-menu">
+                <div class="menu-item" data-item-id="1">
+                    <div class="menu-item-image">
+                        <img src="images/crunchy-cashew.jpg" alt="Crunchy Cashew Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Crunchy Cashew Salad</h3>
+                        <div class="menu-item-meta">
+                            <span>80 calories</span>
+                            <span>•</span>
+                            <span>4 persons</span>
+                        </div>
+                        <div class="menu-item-footer">
+                            <div class="price">₹100</div>
+                            <button class="add-to-cart-btn" data-item-id="1">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-item-id="2">
+                    <div class="menu-item-image">
+                        <img src="images/fresh-salad.jpg" alt="Fresh Garden Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Fresh and Health Salad</h3>
+                        <div class="menu-item-meta">
+                            <span>70 calories</span>
+                            <span>•</span>
+                            <span>2 persons</span>
+                        </div>
+                        <div class="menu-item-footer">
+                            <div class="price">₹7.95</div>
+                            <button class="add-to-cart-btn" data-item-id="2">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mains Menu -->
+            <div class="menu-category" id="mains-menu">
+                <div class="menu-item" data-item-id="3">
+                    <div class="menu-item-image">
+                        <img src="images/pizza.jpg" alt="Pizza">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Pizza</h3>
+                        <div class="menu-item-meta">
+                            <span>300 calories</span>
+                            <span>•</span>
+                            <span>4 persons</span>
+                        </div>
+                        <div class="menu-item-footer">
+                            <div class="price">₹299</div>
+                            <button class="add-to-cart-btn" data-item-id="3">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-item-id="4">
+                    <div class="menu-item-image">
+                        <img src="images/burger.jpg" alt="Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Burger</h3>
+                        <div class="menu-item-meta">
+                            <span>250 calories</span>
+                            <span>•</span>
+                            <span>1 person</span>
+                        </div>
+                        <div class="menu-item-footer">
+                            <div class="price">₹149</div>
+                            <button class="add-to-cart-btn" data-item-id="4">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts Menu -->
+            <div class="menu-category" id="desserts-menu">
+                <div class="menu-item" data-item-id="5">
+                    <div class="menu-item-image">
+                        <img src="images/ice-cream.jpg" alt="Ice Cream">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Ice Cream</h3>
+                        <div class="menu-item-meta">
+                            <span>120 calories</span>
+                            <span>•</span>
+                            <span>1 person</span>
+                        </div>
+                        <div class="menu-item-footer">
+                            <div class="price">₹80</div>
+                            <button class="add-to-cart-btn" data-item-id="5">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items"></div>
+            <div class="cart-summary">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal-amount">₹0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Discount (10%)</span>
+                    <span class="discount-amount">-₹0.00</span>
+                </div>
+                <div class="total-row grand-total">
+                    <span>Total</span>
+                    <span class="total-amount">₹0.00</span>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+
+        <!-- Cart Toggle (Floating) -->
+        <button class="cart-toggle-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </button>
+
+        <!-- Toast Container (for notifications) -->
+        <div class="toast-container"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+    let cart = JSON.parse(localStorage.getItem('bookEatCart')) || {};
+
+    const categoryItems = document.querySelectorAll('.category-item');
+    const menuCategories = document.querySelectorAll('.menu-category');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+    const cartToggleBtn = document.querySelector('.cart-toggle-btn');
+    const cartSidebar = document.querySelector('.cart-sidebar');
+    const closeCartBtn = document.querySelector('.close-cart-btn');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    const cartCount = document.querySelector('.cart-count');
+
+    // Category tab switching
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function () {
+            categoryItems.forEach(cat => cat.classList.remove('active'));
+            this.classList.add('active');
+            const category = this.getAttribute('data-category');
+            menuCategories.forEach(menu => menu.classList.remove('active'));
+            const targetMenu = document.getElementById(`${category}-menu`);
+            if (targetMenu) targetMenu.classList.add('active');
+        });
+    });
+
+    // Add to cart button click
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const menuItem = this.closest('.menu-item');
+            const foodId = menuItem.getAttribute('data-item-id');
+            if (!foodId) return;
+
+            const foodIdNum = parseInt(foodId, 10);
+            if (isNaN(foodIdNum)) {
+                console.error('Invalid food ID:', foodId);
+                return;
+            }
+
+            const itemName = menuItem.querySelector('h3')?.textContent || 'Unknown';
+            const priceText = menuItem.querySelector('.price')?.textContent?.replace(/[₹$]/g, '').trim();
+            const itemPrice = parseFloat(priceText) || 0;
+            const itemImage = menuItem.querySelector('.menu-item-image img')?.src || '';
+
+            if (!cart[foodIdNum]) {
+                cart[foodIdNum] = {
+                    id: foodIdNum,
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: 0,
+                    image: itemImage
+                };
+            }
+            cart[foodIdNum].quantity++;
+            saveCart();
+            updateCartCount();
+            updateCartSidebar();
+            animateElement(this);
+            showToast('Item added to cart', 'success');
+        });
+    });
+
+    function updateCartCount() {
+        let count = 0;
+        for (const itemId in cart) {
+            count += cart[itemId].quantity;
+        }
+        cartCount.textContent = count;
+    }
+
+    function updateCartSidebar() {
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const subtotalElement = document.querySelector('.subtotal-amount');
+        const totalElement = document.querySelector('.total-amount');
+
+        cartItemsContainer.innerHTML = '';
+
+        let subtotal = 0;
+
+        for (const itemId in cart) {
+            const item = cart[itemId];
+            subtotal += item.price * item.quantity;
+
+            const cartItemHTML = `
+                <div class="cart-item" data-item-id="${item.id}">
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus-btn" data-action="decrease" data-id="${item.id}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn plus-btn" data-action="increase" data-id="${item.id}">+</button>
+                            <span class="cart-item-remove" data-action="remove" data-id="${item.id}">Remove</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-price">₹${(item.price * item.quantity).toFixed(2)}</div>
+                </div>
+            `;
+            cartItemsContainer.innerHTML += cartItemHTML;
+        }
+
+        const discount = subtotal * 0.1;
+        const total = subtotal - discount;
+
+        subtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
+        totalElement.textContent = `₹${total.toFixed(2)}`;
+
+        if (Object.keys(cart).length === 0) {
+            cartItemsContainer.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
+            subtotalElement.textContent = '₹0.00';
+            totalElement.textContent = '₹0.00';
+        }
+    }
+
+    // Event delegation for quantity and remove buttons
+    const cartItemsContainer = document.querySelector('.cart-items');
+    if (cartItemsContainer) {
+        cartItemsContainer.addEventListener('click', function (e) {
+            const target = e.target;
+            const action = target.getAttribute('data-action');
+            const itemId = target.getAttribute('data-id');
+            if (!action || !itemId) return;
+            const itemIdNum = parseInt(itemId, 10);
+            if (isNaN(itemIdNum)) return;
+            if (action === 'increase') {
+                increaseQuantity(itemIdNum);
+            } else if (action === 'decrease') {
+                decreaseQuantity(itemIdNum);
+            } else if (action === 'remove') {
+                removeFromCart(itemIdNum);
+            }
+        });
+    }
+
+    cartToggleBtn.addEventListener('click', function () {
+        cartSidebar.classList.add('active');
+        updateCartSidebar();
+    });
+
+    closeCartBtn.addEventListener('click', function () {
+        cartSidebar.classList.remove('active');
+    });
+
+    checkoutBtn.addEventListener('click', function () {
+        if (Object.keys(cart).length === 0) {
+            showToast('Your cart is empty', 'error');
+            return;
+        }
+        window.location.href = 'checkout.html';
+    });
+
+    function increaseQuantity(itemId) {
+        if (cart[itemId]) {
+            cart[itemId].quantity++;
+            saveCart();
+            updateCartCount();
+            updateCartSidebar();
+        }
+    }
+
+    function decreaseQuantity(itemId) {
+        if (cart[itemId]) {
+            if (cart[itemId].quantity > 1) {
+                cart[itemId].quantity--;
+            } else {
+                removeFromCart(itemId);
+                return;
+            }
+            saveCart();
+            updateCartCount();
+            updateCartSidebar();
+        }
+    }
+
+    function removeFromCart(itemId) {
+        if (cart[itemId]) {
+            delete cart[itemId];
+            saveCart();
+            updateCartCount();
+            updateCartSidebar();
+            showToast('Item removed from cart', 'success');
+        }
+    }
+
+    function saveCart() {
+        localStorage.setItem('bookEatCart', JSON.stringify(cart));
+    }
+
+    function showToast(message, type = 'success') {
+        let toastContainer = document.querySelector('.toast-container');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.className = 'toast-container';
+            document.body.appendChild(toastContainer);
+        }
+
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        const icon = type === 'success' ? 'check-circle' : 'exclamation-circle';
+        toast.innerHTML = `
+            <div class="toast-icon"><i class="fas fa-${icon}"></i></div>
+            <div class="toast-content">
+                <div class="toast-title">${type === 'success' ? 'Success' : 'Error'}</div>
+                <div class="toast-message">${message}</div>
+            </div>
+        `;
+        toastContainer.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+
+    function animateElement(element) {
+        element.classList.add('animate');
+        setTimeout(() => element.classList.remove('animate'), 300);
+    }
+
+    const searchInput = document.querySelector('.search-bar input');
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase().trim();
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                const itemName = item.querySelector('h3').textContent.toLowerCase();
+                item.style.display = itemName.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+    }
+
+    updateCartCount();
+    updateCartSidebar();
+});
+
+        // Paste the updated JavaScript code from the previous answer here!
+    </script>
+</body>
+</html>

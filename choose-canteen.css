@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #f9c74f;
+    --secondary-color: #f8961e;
+    --accent-color: #f3722c;
+    --text-color: #333;
+    --light-bg: #fff;
+    --border-radius: 20px;
+    --card-radius: 24px;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.canteen-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-family: 'Satisfy', cursive;
+    font-size: 2rem;
+    margin: 0;
+    color: #000;
+    line-height: 1.2;
+}
+
+.canteen-grid {
+    padding: 0 1.5rem 2rem;
+}
+
+.canteen-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    position: relative;
+    background-color: #e9e9e9;
+}
+
+.canteen-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.canteen-image {
+    position: relative;
+    height: 100%;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.canteen-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.canteen-card:hover .canteen-image img {
+    transform: scale(1.1);
+}
+
+.canteen-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.canteen-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Animation for page transition */
+.page-transition {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .canteen-container {
+        max-width: 100%;
+        border-radius: 0;
+    }
+    
+    .header {
+        padding: 1.2rem;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .canteen-grid {
+        padding: 0 1rem 1.5rem;
+    }
+    
+    .canteen-name {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .canteen-container {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        min-height: auto;
+    }
+    
+    .canteen-image {
+        min-height: 150px;
+    }
+}
+
+/* Placeholder styling for when images aren't available */
+.canteen-image:not(:has(img)) {
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.canteen-image:not(:has(img))::after {
+    content: attr(data-canteen);
+    font-weight: 500;
+    color: #777;
+}

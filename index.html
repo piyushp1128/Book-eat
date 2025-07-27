@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Eat - Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Satisfy&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="login-container">
+            <div class="header text-center py-4">
+                <h1 class="logo">Book-Eat</h1>
+            </div>
+            
+            <div class="login-form-container px-4">
+                <div class="welcome-text text-center mb-4">
+                    <h2>Welcome</h2>
+                    <p>Come and join us to get the best experience at food.</p>
+                    <p class="login-prompt">Login to book your food now</p>
+                </div>
+                
+                <form id="loginForm">
+                    <!-- GRN Number Input -->
+                    <div class="mb-3">
+                        <label for="grnInput" class="form-label">GRN Number</label>
+                        <input type="text" class="form-control" id="grnInput" placeholder="Enter your GRN" required>
+                    </div>
+                    
+                    <!-- Partner's GRN as Password -->
+                    <div class="mb-3">
+                        <label for="partnerGrn" class="form-label">Partner's GRN</label>
+                        <div class="password-input-container position-relative">
+                            <input type="password" class="form-control" id="partnerGrn" placeholder="Enter partner's GRN" required>
+                            <span class="password-toggle position-absolute top-50 end-0 translate-middle-y me-3" id="passwordToggle" style="cursor: pointer;">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </span>
+                        </div>
+                        <div class="text-end mt-1">
+                            <a href="#" class="forgot-password">Forgot Password</a>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-login btn-primary">Log In</button>
+                    </div>
+                </form>
+                
+                <!-- <div class="signup-prompt text-center mt-3">
+                    <p>Don't have an account? <a href="#" class="signup-link">Sign Up</a></p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
